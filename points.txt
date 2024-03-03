@@ -1,0 +1,4 @@
+mika: 200 $
+Ervand: 100 $
+chidem: 0 $
+lala: 0 $
