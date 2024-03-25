@@ -3,3 +3,4 @@ Ervand: 100 $
 chidem: 0 $
 lala: 0 $
 poxus: 500 $
+koko: 300 $

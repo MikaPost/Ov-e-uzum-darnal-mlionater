@@ -2,8 +2,9 @@
 import time
 
 def chidem(txt):
-    f = open(txt)
-    return f.readlines()
+    with open(txt) as f:
+        cnt = f.readlines()
+    return cnt
 
 def write(user, verj):
     points = open("points.txt", "a")
@@ -17,7 +18,7 @@ def write(user, verj):
 def funk(a):
     point = 0
     for i in range(len(a)):
-        # time.sleep(2)
+        time.sleep(1)
         b = a[i].split("-")
         print(b[0])
         print(*b[1:-1], sep="\n")
@@ -31,9 +32,13 @@ def funk(a):
             print("<<<<<<<<<<<<<<<<<<<<you have", point, "$>>>>>>>>>>>>>>>>>")
     return point
 
-user = input("name")
-a = chidem("a.txt")
-verj = funk(a)
-print(verj, "$")
-write(user, verj)
 
+def main():
+    user = input("name")
+    a = chidem("a.txt")
+    verj = funk(a)
+    print(verj, "$")
+    write(user, verj)
+
+if __name__ == "__main__":
+    main()
