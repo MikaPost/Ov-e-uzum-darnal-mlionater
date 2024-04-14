@@ -1,9 +1,13 @@
-# ov e uzum darnal milionater
+"""
+This file is for our new theme: ov e uzum darnal milionater
+Create by: Miqayel Postoyan
+Date: 15 April
+"""
 import time
 
 def chidem(txt):
-    with open(txt) as f:
-        cnt = f.readlines()
+    with open(txt) as fname:
+        cnt = fname.readlines()
     return cnt
 
 def write(user, verj):
@@ -15,15 +19,15 @@ def write(user, verj):
     points.write("\n")
     points.close()
 
-def funk(a):
+def funk(ndata):
     point = 0
-    for i in range(len(a)):
+    for line in range(len(ndata)):
         time.sleep(1)
-        b = a[i].split("-")
-        print(b[0])
-        print(*b[1:-1], sep="\n")
+        ndatas = ndata[line].split("-")
+        print(ndatas[0])
+        print(*ndatas[1:-1], sep="\n")
         patas = input("choose the correct answer")
-        if patas.lower() == b[-1].lower().strip():
+        if patas.lower() == ndatas[-1].lower().strip():
             print("THAT'S RIGHT)))))))))))))))))))")
             point += 100
             print("<<<<<<<<<<<<<<<<<<<<you have", point, "$>>>>>>>>>>>>>>>>>")
@@ -35,8 +39,8 @@ def funk(a):
 
 def main():
     user = input("name")
-    a = chidem("a.txt")
-    verj = funk(a)
+    ndata = chidem("a.txt")
+    verj = funk(ndata)
     print(verj, "$")
     write(user, verj)
 
